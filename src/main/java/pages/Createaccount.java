@@ -39,6 +39,7 @@ public void enterfirstname()
  public WebElement clickaccount;
 public void clickaccount()
 {
+	wait.until(ExpectedConditions.elementToBeClickable(clickaccount));
 	clickaccount.click();
 }
 
@@ -46,6 +47,7 @@ public void clickaccount()
 public WebElement error;
 public void errorvalidation()
 {
+	wait.until(ExpectedConditions.visibilityOf(error));
 	boolean geterror=error.isDisplayed();
 	System.out.println(geterror);
 	String geterrortext=error.getText();
