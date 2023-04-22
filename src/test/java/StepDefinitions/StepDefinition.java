@@ -6,11 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Createaccount;
 import pages.Loginpage;
+import pages.PasswordField;
 public class StepDefinition {
 	
 	Loginpage loginpage=new Loginpage(DriverFactory.driver);
 	Createaccount account=new Createaccount(DriverFactory.driver);
-	
+	PasswordField password=new PasswordField(DriverFactory.driver);
 	@Given("user launches Shopwitheg")
 	public void user_launches_shopwitheg() {
 	   
@@ -60,7 +61,24 @@ public void validate_the_error_message() {
 	account.errorvalidation();
 	
 }
+
+
+@Given("user enter invalid password to the password field")
+public void user_enter_invalid_password_to_the_password_field() {
+  
+	password.enterpassword();
+	
+
 }
 
-
+@Then("check the signinbutton")
+public void check_the_signinbutton() {
+	password.signin();
+}
+@Then("validate the errormessage")
+public void validate_the_errormessage()
+{
+	password.errormessage();
+}
+}
 	
