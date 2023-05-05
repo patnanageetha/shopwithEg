@@ -63,8 +63,8 @@ public void validate_the_error_message() {
 }
 
 
-@Given("user enter invalid password to the password field")
-public void user_enter_invalid_password_to_the_password_field() {
+@Given("user enter valid password to the password field")
+public void user_enter_valid_password_to_the_password_field() {
   
 	password.enterpassword();
 	
